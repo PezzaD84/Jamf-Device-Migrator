@@ -10,11 +10,13 @@
 # Variables
 #########################################################################################
 
+ORG="COMPANY NAME"
+
 DEP_NOTIFY_LOG="/var/tmp/depnotify.log"
 
 DEP_NOTIFY_APP="/Applications/Utilities/DEPNotify.app"
 
-enrollmentURL="https://next15.tramscloud.co.uk/enrol"
+enrollmentURL="ENROLLMENT URL OF NEW JAMF"
 
 JCApp="/Applications/Jamf Connect.app/Contents/Info.plist"
 
@@ -59,10 +61,10 @@ killall cfprefsd
 #########################################################################################
 
 echo "Command: WindowStyle: Activate" >> $DEP_NOTIFY_LOG
-echo "Command: WindowTitle: Next15 Migration" >> $DEP_NOTIFY_LOG
+echo "Command: WindowTitle: $ORG Migration" >> $DEP_NOTIFY_LOG
 echo "Command: Image: /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Sync.icns" >> $DEP_NOTIFY_LOG
-echo "Command: MainTitle: Next15 Migration" >> $DEP_NOTIFY_LOG
-echo "Command: MainText: This mac will now be migrated to the new Next15 MDM server. \n \n Please do not log out or turn off this device during this process. \n \n You will be logged out automatically once complete. \n \n The process will begin shortly" >> $DEP_NOTIFY_LOG
+echo "Command: MainTitle: $ORG Migration" >> $DEP_NOTIFY_LOG
+echo "Command: MainText: This mac will now be migrated to the new $ORG MDM server. \n \n Please do not log out or turn off this device during this process. \n \n The process will now begin." >> $DEP_NOTIFY_LOG
 echo "Status: Device Migration in progress....." >> $DEP_NOTIFY_LOG
 
 # Start DEPNotify app
@@ -95,10 +97,10 @@ sleep 10
 #########################################################################################
 
 echo "Command: WindowStyle: Activate" >> $DEP_NOTIFY_LOG
-echo "Command: WindowTitle: Next15 Migration" >> $DEP_NOTIFY_LOG
+echo "Command: WindowTitle: $ORG Migration" >> $DEP_NOTIFY_LOG
 echo "Command: Image: /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Sync.icns" >> $DEP_NOTIFY_LOG
-echo "Command: MainTitle: Next15 Migration" >> $DEP_NOTIFY_LOG
-echo "Command: MainText: **PLEASE READ THE FOLLOWING TO ENROLL YOUR DEVICE** \n You will now be taken to the new Next15 Enrollment page. Please make a note of the details below to enrol your device. \n \n Username: n15enroll \n Password: n15enrolln15enroll \n \n Once logged in please leave all the details as default and click on Enroll and then follow the onscreen prompts." >> $DEP_NOTIFY_LOG
+echo "Command: MainTitle: $ORG Migration" >> $DEP_NOTIFY_LOG
+echo "Command: MainText: **PLEASE READ THE FOLLOWING TO ENROLL YOUR DEVICE** \n You will now be taken to the new $ORG Enrollment page. Please make a note of the details below to enrol your device. \n \n Username: ENROLLMENT ACCOUNT \n Password: ENROLLMENT PASSWORD \n \n Once logged in please leave all the details as default and click on Enroll and then follow the onscreen prompts." >> $DEP_NOTIFY_LOG
 echo "Status: Device Migration in progress....." >> $DEP_NOTIFY_LOG
 echo "Command: ContinueButton: Enroll" >> $DEP_NOTIFY_LOG
 
@@ -167,9 +169,9 @@ echo "MDM Approval Status: MDM is user approved"
 #########################################################################################
 
 echo "Command: WindowStyle: Activate" > $DEP_NOTIFY_LOG
-echo "Command: WindowTitle: Next15 Migration" >> $DEP_NOTIFY_LOG
+echo "Command: WindowTitle: $ORG Migration" >> $DEP_NOTIFY_LOG
 echo "Command: Image: /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Sync.icns" >> $DEP_NOTIFY_LOG
-echo "Command: MainTitle: Next15 Migration" >> $DEP_NOTIFY_LOG
+echo "Command: MainTitle: $ORG Migration" >> $DEP_NOTIFY_LOG
 echo "Command: MainText: Final Migration checks in progress. \n \n Your device is nearly ready. \n \n Please sit tight while we do some final checks to get you up and running." >> $DEP_NOTIFY_LOG
 echo "Status: Final Migration checks in progress....." >> $DEP_NOTIFY_LOG
 
@@ -219,9 +221,9 @@ fi
 #########################################################################################
 
 echo "Command: WindowStyle: Activate" >> $DEP_NOTIFY_LOG
-echo "Command: WindowTitle: Next15 Migration" >> $DEP_NOTIFY_LOG
+echo "Command: WindowTitle: $ORG Migration" >> $DEP_NOTIFY_LOG
 echo "Command: Image: /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Sync.icns" >> $DEP_NOTIFY_LOG
 echo "Command: MainTitle: Migration Complete!!" >> $DEP_NOTIFY_LOG
-echo "Command: MainText: This mac has been successfully migrated to the new Next15 MDM server. \n \n Please save and close any open work and then click 'Finish'. \n \n You will be logged out and taken to the new next15 login screen. \n \n Please log in with your next15 email address and follow the on screen prompts." >> $DEP_NOTIFY_LOG
+echo "Command: MainText: This mac has been successfully migrated to the new $ORG MDM server. \n \n Please save and close any open work and then click 'Finish'. \n \n You will be logged out and taken to the new next15 login screen. \n \n Please log in with your next15 email address and follow the on screen prompts." >> $DEP_NOTIFY_LOG
 echo "Status: MIGRATION COMPLETE!" >> $DEP_NOTIFY_LOG
 echo "Command: ContinueButtonLogout: Finish" >> $DEP_NOTIFY_LOG
