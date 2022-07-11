@@ -8,10 +8,12 @@ It was created for the purpose of migrating on-prem Jamf instances to JamfCloud 
 
 ## Setup
 
-Firstly you will need DEPNotify installed on devices for this script to work. Set up a policy to do this before the script is run. You can download it here https://files.nomad.menu/DEPNotify.pkg
+You will need DEPNotify installed on devices for this script to work. Set up a policy to do this before the script is run. You can download it here https://files.nomad.menu/DEPNotify.pkg
 
 There is a check in the script to install DEPNotify from Jamf if it is not installed. It needs a policy created with a custom trigger of **installDEPNotify**.
-	
+
+you will need to install a PPPC Profile to allow terminal to send finder and system event requests. You can download the profile here  upload it to your old existing Jamf instance.
+
 This process needs an account setup in the new Jamf instance with **only _Enrollment_ access**. This needs to be added to the custom variables in the script.
 
 Upload the script to your old existing Jamf instance and set the custom variables in the script for your Company **(Between Lines 10-28)**.
