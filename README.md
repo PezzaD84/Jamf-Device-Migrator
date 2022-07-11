@@ -1,25 +1,27 @@
 # Jamf Device Migrator
 
-This script will help to re-enrol devices into a new Jamf instance without the need of wiping the device.
+This script will help to Enrol devices into a new Jamf instance without the need of wiping the device.
 
-It was created for the purpose of migrating on-prem Jamf instances to JamfCloud instances.
+It was created for the purpose of migrating on-prem Jamf instances to JamfCloud instances. It can be used to go from cloud to on-prem, on-prem to on-prem or cloud to cloud. It is not limited to one way.
+
+> **<sub>This script could easily be modified to remove MDM profiles from other solutions other than Jamf if needed. Look at lines 102 and 112 which are the commands to remove Jamf. These could be replaced to remove another solutions MDM and local client.</sub>**
 
 ## Setup
 
-Firstly you will need DEPNotify installed on devices for this script to work so set up a policy to do this before the script is run. You can download it here https://files.nomad.menu/DEPNotify.pkg
+Firstly you will need DEPNotify installed on devices for this script to work. Set up a policy to do this before the script is run. You can download it here https://files.nomad.menu/DEPNotify.pkg
 
 There is a check in the script to install DEPNotify from Jamf if it is not installed. It needs a policy created with a custom trigger of **installDEPNotify**.
 	
 This process needs an account setup in the new Jamf instance with **only _Enrollment_ access**. This needs to be added to the custom variables in the script.
 
-Upload the script to your old existing Jamf instance and set the custom variables in the script (Between Lines 10-28).
+Upload the script to your old existing Jamf instance and set the custom variables in the script for your Company **(Between Lines 10-28)**.
 
 ## Migration Flow
 
 The Migration goes through a few steps as follows.
 
 - Remove Old MDM Profile
-- Remove Old JSS Framework
+- Remove Old Jamf Framework
 - Enroll in new Jamf Instance
 - Check for Jamf Connect (Optional)
 - Remove Local admin rights (Optional)
