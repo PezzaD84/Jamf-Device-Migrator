@@ -12,7 +12,7 @@ You will need DEPNotify installed on devices for this script to work. Set up a p
 
 There is a check in the script to install DEPNotify from Jamf if it is not installed. It needs a policy created with a custom trigger of **installDEPNotify**.
 
-you will need to install a PPPC Profile to allow terminal to send finder and system event requests. You can download the profile here  upload it to your old existing Jamf instance.
+you will need to install a PPPC Profile to allow terminal to send finder and system event requests. You can download the profile here https://github.com/PezzaD84/PPPC-Terminal upload it to your old existing Jamf instance and scope to all devices.
 
 This process needs an account setup in the new Jamf instance with **only _Enrollment_ access**. This needs to be added to the custom variables in the script.
 
