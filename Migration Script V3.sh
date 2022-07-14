@@ -182,7 +182,7 @@ Go to System Preferences > Profiles > MDM and click on the [Approve...] button.
 
 Once the MDM profile has been Approved you can click OK to continue the enrollment process.  
 
-The process will not continue until the MDM has been Approved" buttons {"OK"} default button 1 with icon alias "System:Library:CoreServices:CoreTypes.bundle:Contents:Resources:Sync.icns"'
+The process will not continue until the MDM has been Approved" buttons {"OK"} default button 1 with Title "'"$ORG Migration"'" with icon alias "System:Library:CoreServices:CoreTypes.bundle:Contents:Resources:Sync.icns"'
 	sleep 15
 	
 	MDM_STATUS=$(profiles status -type enrollment | grep -o "User Approved")
