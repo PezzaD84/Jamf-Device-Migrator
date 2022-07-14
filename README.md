@@ -47,13 +47,17 @@ The user will see the following screens while the migration is happening.
 
 ![Screenshot 2022-07-11 at 09 41 02](https://user-images.githubusercontent.com/89595349/178234724-bd15c8ad-8260-4053-9241-9d8543c466ec.png)
 
+**Enrollment Details pop-up**
+
+<img width="532" alt="Screenshot 2022-07-14 at 11 52 49" src="https://user-images.githubusercontent.com/89595349/178966694-23eaef21-db2d-46e3-9af7-9e6afea032c4.png">
+
 **Enrollment Website in Safari**
 
 ![Screenshot 2022-07-11 at 09 46 48](https://user-images.githubusercontent.com/89595349/178235062-06d4418a-98a9-4880-8f75-f9e196273c78.png)
 
 **MDM Approval notification**
 
-![Screenshot 2022-07-11 at 09 56 07](https://user-images.githubusercontent.com/89595349/178235097-8eed6b93-ddcc-4036-8c19-8d4e0f6cf20c.png)
+<img width="532" alt="Screenshot 2022-07-14 at 11 55 22" src="https://user-images.githubusercontent.com/89595349/178967319-6b24f6e7-30f1-41d5-9bc4-ce3a93eef1bb.png">
 
 **Final Migration Checks**
 
