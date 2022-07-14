@@ -121,7 +121,7 @@ echo "Command: WindowStyle: Activate" >> $DEP_NOTIFY_LOG
 echo "Command: WindowTitle: $ORG Migration" >> $DEP_NOTIFY_LOG
 echo "Command: Image: /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Sync.icns" >> $DEP_NOTIFY_LOG
 echo "Command: MainTitle: $ORG Migration" >> $DEP_NOTIFY_LOG
-echo "Command: MainText: **PLEASE READ THE FOLLOWING TO ENROLL YOUR DEVICE** \n You will now be taken to the new $ORG Enrollment page. Please make a note of the details below to enrol your device. \n \n Username: $EnrollmentUser \n Password: $EnrollmentPW \n \n Once logged in please leave all the details as default and click on Enroll and then follow the onscreen prompts." >> $DEP_NOTIFY_LOG
+echo "Command: MainText: **PLEASE READ THE FOLLOWING TO ENROLL YOUR DEVICE** \n You will now be taken to the new $ORG Enrollment page. Please use the details below to enrol your device. \n \n Username: $EnrollmentUser \n Password: $EnrollmentPW \n \n Once logged in please leave all the details as default and click on Enroll and then follow the onscreen prompts." >> $DEP_NOTIFY_LOG
 echo "Status: Device Migration in progress....." >> $DEP_NOTIFY_LOG
 echo "Command: ContinueButton: Enroll" >> $DEP_NOTIFY_LOG
 
@@ -147,9 +147,13 @@ profile=$(ls ~/Downloads/ | grep -m1 -i enrollment)
 
 while [[ $profile == "" ]]; do
 	echo "Profile not downloaded yet...."
-	sleep 5
+	osascript -e 'display dialog "**Enrollment Details**
+Username: '"$EnrollmentUser"'
+Password: '"$EnrollmentPW"'" buttons {"OK"} default button 1 with Title "'"$ORG"' Migration" with icon alias "System:Library:CoreServices:CoreTypes.bundle:Contents:Resources:Sync.icns"' &
+	sleep 10
+	killall osascript
 	profile=$(ls ~/Downloads/ | grep -m1 -i enrollment)
-done
+done 2>/dev/null
 
 echo "Profile Downloaded...."
 
