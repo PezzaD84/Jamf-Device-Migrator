@@ -18,7 +18,7 @@ EnrollmentUser="ENROLLMENT USERNAME"
 
 EnrollmentPW="ENROLLMENT PASSWORD"
 
-ITEmail="itemail@company.com"
+ITEmail="helpdesk@company.com"
 
 # Set to True if you are using Jamf Connect
 JamfConnect="False"
