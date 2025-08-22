@@ -99,7 +99,7 @@ echo "Command: MainTitle: $ORG Migration" >> $DEP_NOTIFY_LOG
 echo "Command: MainText: The migration process has now started! \n \n Sit tight while we do all the techy stuff." >> $DEP_NOTIFY_LOG
 echo "Status: Removing old MDM Profile....." >> $DEP_NOTIFY_LOG
 
-##### jamf removeMdmProfile
+jamf removeMdmProfile
 
 sleep 10
 
@@ -109,7 +109,7 @@ sleep 10
 
 echo "Status: Removing old Management Framework....." >> $DEP_NOTIFY_LOG
 
-##### jamf removeFramework
+jamf removeFramework
 
 sleep 10
 
